@@ -1,8 +1,44 @@
 <HTML>
-<HEAD></HEAD>
-<BODY>
-<DIV><A href="index.html">Top</A></DIV>
-<DIV><IMG SRC="spinnaker.jpg" HEIGHT=300></DIV>
-<DIV>My Spinnaker!</DIV>
-</BODY>
+    <head>
+        <style>
+			.invisible { display: none; font-size:18px; }
+			.visible { display: block; font-size:18px; }
+        </style>
+    </head>
+	<BODY>
+<script type="text/javascript">
+var current = "one";
+function ShowNext()
+{
+	var el = document.getElementById(current);
+	el.className = "invisible";
+	switch(current)
+	{
+		case "one":
+			current = "two";
+			break;
+		case "two":
+			current = "three";
+			break;
+		case "three":
+			current = "one";
+			break;
+	}
+	el = document.getElementById(current);
+	el.className = "visible";
+}
+</script>
+
+		<DIV><A href="index.html">Top</A></DIV>
+		<DIV><BUTTON onclick="ShowNext();">Next</BUTTON></DIV>
+		<DIV id="one" class="visible"><IMG SRC="spinnaker.jpg" HEIGHT=300>
+			<DIV>My Spinnaker!</DIV>
+		</DIV>
+		<DIV id="two" class="invisible"><IMG SRC="beached_boat_1.jpg" HEIGHT=300>
+			<DIV>First Beached Boat</DIV>
+		</DIV>
+		<DIV id="three" class="invisible"><IMG SRC="beached_boat_2.jpg" HEIGHT=300>
+			<DIV>Second Beached Boat</DIV>
+		</DIV>
+	</BODY>
 </HTML>
