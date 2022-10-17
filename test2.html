@@ -10,25 +10,26 @@ var Captions = new Array();
 Images[0] = "spinnaker.jpg";
 Images[1] = "beached_boat_1.jpg";
 Images[2] = "beached_boat_2.jpg";
+
 Captions[0] = "My Spinnaker!";
 Captions[1] = "First Beached Boat";
 Captions[2] = "Second Beached Boat";
 
 function DownloadNext()
 {
-	var el = document.getElementById(current);
-	
+	var caption = document.getElementById("caption");
+	var image = document.getElementById("image");
 	current += 1;
 	if(current > 2)
 		current = 0;
-	el = document.getElementById("image");
-	el.Src = Images[current];
-	el = document.getElementById("captio0n");
-	el.innerText = Captions[current];
+	image.src = Images[current];
+	caption.innerText = Captions[current];
 }
 </script>
 
-		<DIV><A href="index.html">Top</A></DIV>
+		<h3>Change image src attribute</h3>
+		<DIV><A href="index.html">Index</A></DIV>
+		<BR></BR>
 		<DIV><BUTTON onclick="DownloadNext();">Next</BUTTON></DIV>
 		<DIV><IMG id="image" SRC="spinnaker.jpg" HEIGHT=300>
 			<DIV id="caption">My Spinnaker!</DIV>
